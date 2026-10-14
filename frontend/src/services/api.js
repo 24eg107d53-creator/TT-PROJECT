@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://carrental-fejd.onrender.com/api",
+  baseURL: import.meta.env.VITE_API_URL || "https://carrental-fejd.onrender.com/api",
 });
 
 // Attach token to every request
