@@ -1,8 +1,21 @@
 {
-  "rewrites": [
+  "routes": [
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "^/api/(.*)$",
+      "dest": "https://carrental-fejd.onrender.com/api/$1",
+      "transforms": [
+        {
+          "type": "request.headers",
+          "op": "delete",
+          "target": {
+            "key": "origin"
+          }
+        }
+      ]
+    },
+    {
+      "src": "^/(.*)$",
+      "dest": "/index.html"
     }
   ]
 }
