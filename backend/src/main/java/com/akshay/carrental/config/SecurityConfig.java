@@ -1,7 +1,8 @@
 package com.akshay.carrental.config;
 
-import java.util.List;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -19,8 +20,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 @Configuration
 public class SecurityConfig {
 
-    @Value("${app.cors.allowed-origins}")
-    private String allowedOrigins;
+    @Value("${CORS_ALLOWED_ORIGINS:}")
+    private String additionalAllowedOrigins;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -40,10 +41,19 @@ public class SecurityConfig {
 
         CorsConfiguration configuration = new CorsConfiguration();
 
-        configuration.setAllowedOrigins(Arrays.stream(allowedOrigins.split(","))
+        List<String> allowedOrigins = new ArrayList<>(List.of(
+            "http://localhost:5173",
+            "https://carrental-two-azure.vercel.app",
+            "https://tt-project-eight.vercel.app"
+        ));
+
+        Arrays.stream(additionalAllowedOrigins.split(","))
             .map(String::trim)
             .filter(origin -> !origin.isEmpty())
-            .toList());
+            .filter(origin -> !allowedOrigins.contains(origin))
+            .forEach(allowedOrigins::add);
+
+        configuration.setAllowedOrigins(allowedOrigins);
 
         configuration.setAllowedMethods(List.of("GET","POST","PUT","DELETE","OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
