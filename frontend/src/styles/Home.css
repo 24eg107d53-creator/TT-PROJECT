@@ -1,0 +1,166 @@
+.home {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION */
+
+.hero {
+  height: 85vh;
+  background-image: url("https://images.unsplash.com/photo-1502877338535-766e1452684a");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero-overlay {
+  height: 100%;
+  width: 100%;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay h1 {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+.hero-overlay p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.hero-overlay button {
+  padding: 12px 28px;
+  font-size: 16px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hero-overlay button:hover {
+  background: #1d4ed8;
+}
+
+/* FEATURED CARS */
+
+.featured {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+.car-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.car-card {
+  width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+}
+
+.car-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.2);
+}
+
+.car-info {
+  padding: 15px;
+}
+
+.car-info h3 {
+  margin-bottom: 8px;
+}
+
+.car-info p {
+  color: #2563eb;
+  font-weight: bold;
+}
+
+/* VIEW MORE BUTTON */
+
+.view-more {
+  margin-top: 40px;
+}
+
+.view-more button {
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.view-more button:hover {
+  background: #1d4ed8;
+}
+
+/* WHY US SECTION */
+/* WHY US MINIMAL PROFESSIONAL */
+
+.why-us {
+  background: #f3f4f6;
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.why-us h2 {
+  font-size: 30px;
+  margin-bottom: 40px;
+}
+
+.why-grid {
+  display: flex;
+  justify-content: center;
+  gap: 90px;
+  flex-wrap: wrap;
+}
+
+.why-item {
+  max-width: 200px;
+}
+
+.why-item h4 {
+  margin-bottom: 6px;
+  font-size: 18px;
+}
+
+.why-item p {
+  color: #555;
+  font-size: 14px;
+}
+
+/* subtle divider line */
+
+.why-item:not(:last-child) {
+  border-right: 1px solid #ddd;
+  padding-right: 40px;
+}

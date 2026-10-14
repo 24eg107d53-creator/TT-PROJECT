@@ -1,0 +1,28 @@
+.car-details {
+  padding: 40px;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.car-details img {
+  width: 400px;
+  border-radius: 10px;
+}
+
+.details-info {
+  max-width: 400px;
+}
+
+.details-info h1 {
+  margin-bottom: 20px;
+}
+
+.details-info button {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}

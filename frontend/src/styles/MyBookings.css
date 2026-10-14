@@ -1,0 +1,19 @@
+.bookings-page {
+  padding: 40px;
+  text-align: center;
+}
+
+.bookings-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.booking-card {
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
